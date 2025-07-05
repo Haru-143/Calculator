@@ -60,11 +60,12 @@ body {
     display: flex;
     flex-direction: column;
     width: 80px;
+    gap: 10px;
 }
 
 .equals {
     height: 50px;
-    height: 100%;
+    height: 200px;
     background-color: #1880bd;
     box-shadow: 0px 4px #0a5c8b;
 }  
@@ -100,14 +101,16 @@ body {
     transform: translateY(4px);
 }
 
-.delete {
+.delete,
+.back {
     background-color: #d6181e;
     color: white;
     flex: 1;
     box-shadow: 0px 4px #ac1015;
 }
 
-.delete:active {
+.delete:active,
+.back:active {
     background-color: rgb(243, 95, 95);
     box-shadow: 0px 2px #921b1b;
     transform: translateY(4px);
