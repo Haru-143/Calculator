@@ -65,7 +65,11 @@ numberBtns.forEach(button => {
 operators.forEach(button => {
     button.addEventListener("click", (e) => {
         handleOperator(e.target.textContent);
-        display.textContent = `${previousValue} ${operator} ${currentValue}`;
+        if (previousValue !== '' && operator !== '') {
+            display.textContent = `${previousValue} ${operator} ${currentValue}`;
+        } else if (previousValue === '' && operator !== '') {
+            return;
+        }
     })
 })
 
