@@ -2,9 +2,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-width: 100vh;
     padding: 15px;
     background-color: beige;
+    font-family: 'Calculator', sans-serif;                                             
+}
+
+@import url('https://fonts.cdnfonts.com/css/calculator');
+
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
 }
 
 .calculator {
@@ -12,18 +21,22 @@ body {
     width: 350px;
     border-radius: 15px;
     padding: 15px;
+    border: 2px solid grey;
+    box-shadow: 5px 10px 8px #888888;
 }
 
 .display {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: white;
+    background-color: lightgray;
     border-radius: 15px;
     padding: 15px;
     margin-bottom: 20px;
-    font-size: 2.5rem;
+    font-weight: bold;
+    font-size: 3rem;
     height: 70px;
+    border: 2px solid grey;
 }
 
 .buttons-container {
@@ -54,7 +67,9 @@ body {
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    font-size: 2rem;
+    font-family: 'Calculator', sans-serif;     
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .equal-column {
@@ -69,6 +84,7 @@ body {
     height: 200px;
     background-color: #1880bd;
     box-shadow: 0px 4px #0a5c8b;
+    font-size: 5rem;
 }  
 
 .equals:active {
