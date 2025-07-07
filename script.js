@@ -44,9 +44,11 @@ function operate() {
 
 const display = document.getElementById('calculator-display');
 const numberBtns = document.querySelectorAll('.number');
+const decimal = document.querySelector('.decimal');
 const operators = document.querySelectorAll('.operator');
-const clear = document.querySelector('.delete');
+const clear = document.querySelector('.clear');
 const equal = document.querySelector('.equals');
+const deleteBtn = document.querySelector('.delete');
 let currentValue = '';
 let previousValue = '';
 let operator = '';
@@ -59,6 +61,7 @@ numberBtns.forEach(button => {
         } else {
             display.textContent = currentValue || '0';
         }
+        updateDisplay();
     })
 })
 
@@ -70,6 +73,7 @@ operators.forEach(button => {
         } else if (previousValue === '' && operator !== '') {
             return;
         }
+        updateDisplay();
     })
 })
 
@@ -85,6 +89,16 @@ equal.addEventListener("click", () => {
         operate();
         display.textContent = previousValue;
     }
+})
+
+decimal.addEventListener('click', () => {
+    addDecimal();
+    updateDisplay();
+})
+
+deleteBtn.addEventListener('click', () => {
+    deleteValue();
+    updateDisplay();
 })
 
 function handleNumber(num) {
@@ -114,4 +128,22 @@ function handleOperator(op) {
     currentValue = '';
 }
 
+function addDecimal() {
+    if(!currentValue.includes('.')) {
+        currentValue += '.';
+    }
+}
 
+function deleteValue() {
+    if (currentValue.length > 0) {
+        currentValue = currentValue.slice(0, -1);
+    }
+}
+
+function updateDisplay() {
+    if (operator) {
+        display.textContent = `${previousValue} ${operator} ${currentValue}`;
+    } else {
+        display.textContent = currentValue || '0';
+    }
+}
