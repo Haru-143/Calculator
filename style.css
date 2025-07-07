@@ -106,28 +106,30 @@ h1 {
     transform: translateY(4px);
 }
 
-.number {
+.number,
+.decimal {
     flex: 1;
     background-color: lightgray;
     box-shadow: 0px 4px #999;
 }
 
-.number:active {
+.number:active,
+.decimal:active {
     background-color: white;
     box-shadow: 0px 2px dimgray;
     transform: translateY(4px);
 }
 
-.delete,
-.back {
+.clear,
+.delete {
     background-color: #d6181e;
     color: white;
     flex: 1;
     box-shadow: 0px 4px #ac1015;
 }
 
-.delete:active,
-.back:active {
+.clear:active,
+.delete:active {
     background-color: rgb(243, 95, 95);
     box-shadow: 0px 2px #921b1b;
     transform: translateY(4px);
